@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <metafile
-	version="2.5"
+	version="3.2"
 	client="installation">
 	<name>Bahasa Indonesia</name>
-	<version>2.5</version>
-	<creationDate>August 2012</creationDate>
+	<version>3.2.0</version>
+	<creationDate>January 2013</creationDate>
 	<author>Tim Hanacaraka Joomla Indonesia</author>
-	<copyright>Copyright (C) 2005 - 2014 Open Source Matters.</copyright>
+	<authorUrl>www.joomla.org</authorUrl>
+	<copyright>Copyright (C) 2005 - 2014 Open Source Matters. All rights reserved.</copyright>
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
-	<description>Indonesian language installation for Joomla</description>
+	<description></description>
 	<files>
 		<filename>id-ID.ini</filename>
 	</files>
