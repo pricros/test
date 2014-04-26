@@ -1,8 +1,8 @@
 <?php
 /**
  * @package                Joomla.Site
- * @subpackage  Templates.beez_20
- * @copyright        Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
+ * @subpackage	Templates.beez_20
+ * @copyright        Copyright (C) 2005 - 2014 Open Source Matters, Inc. All rights reserved.
  * @license                GNU General Public License version 2 or later; see LICENSE.txt
  */
 
@@ -12,23 +12,23 @@ defined('_JEXEC') or die;
 jimport('joomla.filesystem.file');
 
 // check modules
-$showRightColumn  = ($this->countModules('position-3') or $this->countModules('position-6') or $this->countModules('position-8'));
-$showbottom      = ($this->countModules('position-9') or $this->countModules('position-10') or $this->countModules('position-11'));
-$showleft      = ($this->countModules('position-4') or $this->countModules('position-7') or $this->countModules('position-5'));
+$showRightColumn	= ($this->countModules('position-3') or $this->countModules('position-6') or $this->countModules('position-8'));
+$showbottom			= ($this->countModules('position-9') or $this->countModules('position-10') or $this->countModules('position-11'));
+$showleft			= ($this->countModules('position-4') or $this->countModules('position-7') or $this->countModules('position-5'));
 
 if ($showRightColumn==0 and $showleft==0) {
-  $showno = 0;
+	$showno = 0;
 }
 
 JHtml::_('behavior.framework', true);
 
 // get params
-$color        = $this->params->get('templatecolor');
-$logo        = $this->params->get('logo');
-$navposition    = $this->params->get('navposition');
-$app        = JFactory::getApplication();
-$doc        = JFactory::getDocument();
-$templateparams    = $app->getTemplate(true)->params;
+$color				= $this->params->get('templatecolor');
+$logo				= $this->params->get('logo');
+$navposition		= $this->params->get('navposition');
+$app				= JFactory::getApplication();
+$doc				= JFactory::getDocument();
+$templateparams		= $app->getTemplate(true)->params;
 
 $doc->addStyleSheet($this->baseurl.'/templates/system/css/system.css');
 $doc->addStyleSheet($this->baseurl.'/templates/'.$this->template.'/css/position.css', $type = 'text/css', $media = 'screen,projection');
@@ -37,20 +37,20 @@ $doc->addStyleSheet($this->baseurl.'/templates/'.$this->template.'/css/print.css
 
 $files = JHtml::_('stylesheet', 'templates/'.$this->template.'/css/general.css', null, false, true);
 if ($files):
-  if (!is_array($files)):
-    $files = array($files);
-  endif;
-  foreach($files as $file):
-    $doc->addStyleSheet($file);
-  endforeach;
+	if (!is_array($files)):
+		$files = array($files);
+	endif;
+	foreach($files as $file):
+		$doc->addStyleSheet($file);
+	endforeach;
 endif;
 
 $doc->addStyleSheet('templates/'.$this->template.'/css/'.htmlspecialchars($color).'.css');
 if ($this->direction == 'rtl') {
-  $doc->addStyleSheet($this->baseurl.'/templates/'.$this->template.'/css/template_rtl.css');
-  if (file_exists(JPATH_SITE . '/templates/' . $this->template . '/css/' . $color . '_rtl.css')) {
-    $doc->addStyleSheet($this->baseurl.'/templates/'.$this->template.'/css/'.htmlspecialchars($color).'_rtl.css');
-  }
+	$doc->addStyleSheet($this->baseurl.'/templates/'.$this->template.'/css/template_rtl.css');
+	if (file_exists(JPATH_SITE . '/templates/' . $this->template . '/css/' . $color . '_rtl.css')) {
+		$doc->addStyleSheet($this->baseurl.'/templates/'.$this->template.'/css/'.htmlspecialchars($color).'_rtl.css');
+	}
 }
 
 $doc->addScript($this->baseurl.'/templates/'.$this->template.'/javascript/md_stylechanger.js', 'text/javascript');
@@ -67,14 +67,14 @@ $doc->addScript($this->baseurl.'/templates/'.$this->template.'/javascript/hide.j
 <?php if ($color=="personal") : ?>
 <style type="text/css">
 #line {
-  width:98% ;
+	width:98% ;
 }
 .logoheader {
-  height:200px;
+	height:200px;
 }
 #header ul.menu {
-  display:block !important;
-  width:98.2% ;
+	display:block !important;
+	width:98.2% ;
 }
 </style>
 <?php endif; ?>
@@ -85,21 +85,21 @@ $doc->addScript($this->baseurl.'/templates/'.$this->template.'/javascript/hide.j
 <![endif]-->
 
 <script type="text/javascript">
-  var big ='<?php echo (int)$this->params->get('wrapperLarge');?>%';
-  var small='<?php echo (int)$this->params->get('wrapperSmall'); ?>%';
-  var altopen='<?php echo JText::_('TPL_BEEZ2_ALTOPEN', true); ?>';
-  var altclose='<?php echo JText::_('TPL_BEEZ2_ALTCLOSE', true); ?>';
-  var bildauf='<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/images/plus.png';
-  var bildzu='<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/images/minus.png';
-  var rightopen='<?php echo JText::_('TPL_BEEZ2_TEXTRIGHTOPEN', true); ?>';
-  var rightclose='<?php echo JText::_('TPL_BEEZ2_TEXTRIGHTCLOSE', true); ?>';
-  var fontSizeTitle='<?php echo JText::_('TPL_BEEZ2_FONTSIZE', true); ?>';
-  var bigger='<?php echo JText::_('TPL_BEEZ2_BIGGER', true); ?>';
-  var reset='<?php echo JText::_('TPL_BEEZ2_RESET', true); ?>';
-  var smaller='<?php echo JText::_('TPL_BEEZ2_SMALLER', true); ?>';
-  var biggerTitle='<?php echo JText::_('TPL_BEEZ2_INCREASE_SIZE', true); ?>';
-  var resetTitle='<?php echo JText::_('TPL_BEEZ2_REVERT_STYLES_TO_DEFAULT', true); ?>';
-  var smallerTitle='<?php echo JText::_('TPL_BEEZ2_DECREASE_SIZE', true); ?>';
+	var big ='<?php echo (int)$this->params->get('wrapperLarge');?>%';
+	var small='<?php echo (int)$this->params->get('wrapperSmall'); ?>%';
+	var altopen='<?php echo JText::_('TPL_BEEZ2_ALTOPEN', true); ?>';
+	var altclose='<?php echo JText::_('TPL_BEEZ2_ALTCLOSE', true); ?>';
+	var bildauf='<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/images/plus.png';
+	var bildzu='<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/images/minus.png';
+	var rightopen='<?php echo JText::_('TPL_BEEZ2_TEXTRIGHTOPEN', true); ?>';
+	var rightclose='<?php echo JText::_('TPL_BEEZ2_TEXTRIGHTCLOSE', true); ?>';
+	var fontSizeTitle='<?php echo JText::_('TPL_BEEZ2_FONTSIZE', true); ?>';
+	var bigger='<?php echo JText::_('TPL_BEEZ2_BIGGER', true); ?>';
+	var reset='<?php echo JText::_('TPL_BEEZ2_RESET', true); ?>';
+	var smaller='<?php echo JText::_('TPL_BEEZ2_SMALLER', true); ?>';
+	var biggerTitle='<?php echo JText::_('TPL_BEEZ2_INCREASE_SIZE', true); ?>';
+	var resetTitle='<?php echo JText::_('TPL_BEEZ2_REVERT_STYLES_TO_DEFAULT', true); ?>';
+	var smallerTitle='<?php echo JText::_('TPL_BEEZ2_DECREASE_SIZE', true); ?>';
 </script>
 
 </head>
@@ -112,7 +112,7 @@ $doc->addScript($this->baseurl.'/templates/'.$this->template.'/javascript/hide.j
                                 <div class="logoheader">
                                         <h1 id="logo">
 
-                                        <!--<?php if ($logo): ?>
+                                        <?php if ($logo): ?>
                                         <img src="<?php echo $this->baseurl ?>/<?php echo htmlspecialchars($logo); ?>"  alt="<?php echo htmlspecialchars($templateparams->get('sitetitle'));?>" />
                                         <?php endif;?>
                                         <?php if (!$logo ): ?>
@@ -120,13 +120,7 @@ $doc->addScript($this->baseurl.'/templates/'.$this->template.'/javascript/hide.j
                                         <?php endif; ?>
                                         <span class="header1">
                                         <?php echo htmlspecialchars($templateparams->get('sitedescription'));?>
-                                        </span>-->
-                                                <?php if ($this->countModules('position-15')): ?>
-                                                        <div id="top"><jdoc:include type="modules" name="position-15"   />
-                                                        </div>
-                                                <?php endif; ?>                                  
-                                  
-                                  </h1>
+                                        </span></h1>
                                 </div><!-- end logoheader -->
                                         <ul class="skiplinks">
                                                 <li><a href="#main" class="u2"><?php echo JText::_('TPL_BEEZ2_SKIP_TO_CONTENT'); ?></a></li>
@@ -250,6 +244,6 @@ $doc->addScript($this->baseurl.'/templates/'.$this->template.'/javascript/hide.j
                         </div>
 
                 </div>
-        <jdoc:include type="modules" name="debug" />
+				<jdoc:include type="modules" name="debug" />
         </body>
 </html>

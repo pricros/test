@@ -63,7 +63,7 @@ body
 
 #wrapper
 {
-        width:40%;
+        width:53%;
         float:left;
         position:relative;
 
@@ -91,7 +91,7 @@ body
 #right
 {
     float:left;
-    width: 25%;
+    width: 20%;
     margin:10px 0px 10px 2%;
     padding:0px 0px 5px 0px;
     position:relative;
@@ -183,6 +183,56 @@ body
     padding: 0;
     visibility: hidden;
 }
+
+h1#logo
+{
+        font-size:3.5em;
+        line-height:1.0em;
+}
+
+#logo
+{
+        margin-top:0.6em;
+        margin-left:10px;
+        /* position:absolute;*/
+        display:block;
+        padding:20px 20px 20px 10px;
+        width:425px;
+        padding-top:0.6em;
+        font-weight:normal;
+        line-height:1em;
+        font-size:3em;
+}
+
+#logo img
+{
+        display: block;
+}
+
+#logo span
+{
+        padding-left:2px
+}
+
+#logo span.header1
+{
+        font-size:0.4em;
+        display:block;
+        top:0em;
+        line-height:0.8em
+}
+
+.logoheader
+{
+        margin:0;
+        padding:0;
+        text-align:left;
+        font-weight:normal;
+        line-height:1.5em;
+        min-height:159px;
+
+}
+
 #line
 {       padding:5px 0px 2px 2px;
         position:absolute;

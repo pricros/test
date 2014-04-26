@@ -3,7 +3,7 @@
  * @package     Joomla.Platform
  * @subpackage  Installer
  *
- * @copyright   Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2014 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE
  */
 
@@ -38,10 +38,8 @@ class JInstallerFile extends JAdapterInstance
 		$extension = 'files_' . str_replace('files_', '', strtolower(JFilterInput::getInstance()->clean((string) $this->manifest->name, 'cmd')));
 		$lang = JFactory::getLanguage();
 		$source = $path;
-		$lang->load($extension . '.sys', $source, null, false, false)
-			|| $lang->load($extension . '.sys', JPATH_SITE, null, false, false)
-			|| $lang->load($extension . '.sys', $source, $lang->getDefault(), false, false)
-			|| $lang->load($extension . '.sys', JPATH_SITE, $lang->getDefault(), false, false);
+			$lang->load($extension . '.sys', $source, null, false, true)
+		||	$lang->load($extension . '.sys', JPATH_SITE, null, false, true);
 	}
 
 	/**
@@ -481,6 +479,7 @@ class JInstallerFile extends JAdapterInstance
 			// Second argument is the utf compatible version attribute
 			$utfresult = $this->parent->parseSQLFiles($this->manifest->uninstall->sql);
 
+			$db = JFactory::getDbo();
 			if ($utfresult === false)
 			{
 				// Install failed, rollback changes
@@ -488,8 +487,7 @@ class JInstallerFile extends JAdapterInstance
 				$retval = false;
 			}
 
-			// Remove the schema version
-			$db = JFactory::getDbo();
+ 			// Remove the schema version
 			$query = $db->getQuery(true);
 			$query->delete()
 				->from('#__schemas')

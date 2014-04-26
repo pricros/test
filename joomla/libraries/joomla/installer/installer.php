@@ -3,7 +3,7 @@
  * @package     Joomla.Platform
  * @subpackage  Installer
  *
- * @copyright   Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2014 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE
  */
 
@@ -635,11 +635,13 @@ class JInstaller extends JAdapter
 		else
 		{
 			$this->abort(JText::_('JLIB_INSTALLER_ABORT_NOUPDATEPATH'));
+			return false;
 		}
 
 		if (!$this->setupInstall())
 		{
-			return $this->abort(JText::_('JLIB_INSTALLER_ABORT_DETECTMANIFEST'));
+			$this->abort(JText::_('JLIB_INSTALLER_ABORT_DETECTMANIFEST'));
+			return false;
 		}
 
 		$type = (string) $this->manifest->attributes()->type;
@@ -920,7 +922,7 @@ class JInstaller extends JAdapter
 
 			if ($fCharset == 'utf8' && $fDriver == $dbDriver)
 			{
-				$sqlfile = $this->getPath('extension_root') . '/' . $file;
+				$sqlfile = $this->getPath('extension_root') . '/' . trim($file);
 
 				// Check that sql files exists before reading. Otherwise raise error for rollback
 				if (!file_exists($sqlfile))
@@ -1856,8 +1858,15 @@ class JInstaller extends JAdapter
 	 */
 	public function findManifest()
 	{
-		// Get an array of all the XML files from the installation directory
-		$xmlfiles = JFolder::files($this->getPath('source'), '.xml$', 1, true);
+		// Main folder manifests (higher priority)
+		$parentXmlfiles = JFolder::files($this->getPath('source'), '.xml$', false, true);
+
+		// Search for children manifests (lower priority)
+		$allXmlFiles = JFolder::files($this->getPath('source'), '.xml$', 1, true);
+
+		// Create an unique array of files
+		$xmlfiles = array_unique(array_merge($parentXmlfiles, $allXmlFiles));
+
 		// If at least one XML file exists
 		if (!empty($xmlfiles))
 		{
