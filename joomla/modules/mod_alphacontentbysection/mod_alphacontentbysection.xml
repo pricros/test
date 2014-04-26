@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install type="module" version="1.5.0">
+	<name>AlphaContent by Section</name>
+	<author>Bernard Gilly</author>
+	<creationDate>2008 October 19</creationDate>
+	<copyright>Copyright (C) 2008. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>www.alphaplug.com</authorEmail>
+	<authorUrl>http://www.alphaplug.com</authorUrl>
+	<version>1.0.1</version>
+	<description>Display Sections with image for AlphaContent component.</description>
+	<languages>
+		<language tag="en-GB">en-GB.mod_alphacontentbysection.ini</language>
+		<language tag="fr-FR">fr-FR.mod_alphacontentbysection.ini</language>
+	</languages>
+	<files>
+		<filename module="mod_alphacontentbysection">mod_alphacontentbysection.php</filename>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>
+	</files>
+	<params>
+		<param name="moduleclass_sfx" type="text" default="" label="ABSCLASSSUFFIX" description="ABSCLASSSUFFIXDESC" />
+		<param name="@spacer" type="spacer" default="" label="" description="" />
+		<param name="itemidmenu" type="text" default="" label="ABSDIRECTORYID" description="ABSITEMIDMENUDESC" />
+		<param name="componentused" type="list" default="com_content" label="ABSCONTENTUSED" description="ABSCONTENTUSEDDESC">
+			<option value="com_content">ABSCONTENT</option>
+			<option value="com_weblinks">ABSWEBLINKS</option>
+			<option value="com_contact">ABSCONTACTS</option>
+		</param>
+		<param name="secid" type="text" default="" label="ABSSECTIONID" description="ABSPARAMSECTIONID" />
+		<param name="catid" type="text" default="" label="ABSCATEGORYID" description="ABSPARAMCATEGORYID" />
+		<param name="@spacer" type="spacer" default="" label="" description="" />
+		<param name="show_categories" type="radio" default="1" label="ABSSHOWCATEGORIES" description="ABSSHOWCATEGORIESDESC" >
+			<option value="0">ABSNO</option>
+			<option value="1">ABSYES</option>
+		</param>
+		<param name="link_on_categorie" type="radio" default="1" label="ABSLAYOUTFORCATEGORIES" description="ABSLAYOUTFORCATEGORIESDESC" >
+			<option value="0">ABSTEXT</option>
+			<option value="1">ABSLINK</option>
+		</param>			
+		<param name="num_categories" type="list" default="" label="ABSNUMBEROFCATEGORIES" description="ABSNUMBEROFCATEGORIESDESC" >
+			<option value="">ABSUNLIMITED</option>
+			<option value="LIMIT 2">2</option>
+			<option value="LIMIT 3">3</option>
+			<option value="LIMIT 4">4</option>
+			<option value="LIMIT 5">5</option>
+		</param>
+		<param name="@spacer" type="spacer" default="" label="" description="" />
+		<param name="showimage" type="radio" default="1" label="ABSSHOWIMAGE" description="ABSSHOWIMAGEDESC">
+			<option value="1">ABSSHOW</option>
+			<option value="0">ABSHIDE</option>
+		</param>
+		<param name="img_width" type="text" default="48" label="ABSMAXWIDTHIMAGE" description="ABSMAXWIDTHIMAGEDESC" />
+		<param name="img_borderwidth" type="text" default="1" label="ABSBORDERWIDTH" description="ABSBORDERWIDTHDESC" />
+		<param name="img_colorborder" type="text" default="CECECE" label="ABSCOLORBORDER" description="ABSCOLORBORDERDESC" />
+		<param name="img_bgcolor" type="text" default="FFFFFF" label="ABSBACKGROUNDCOLORIMAGE" description="ABSBACKGROUNDCOLORIMAGE" />
+	</params>
+</install>

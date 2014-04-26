@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension
+	type="module"
+	version="2.5"
+	client="site"
+	method="upgrade">
+	<name>Custom Youtube Playlist</name>
+	<author>WebKul</author>
+	<creationDate>june/2011</creationDate>	
+	<copyright>This extension in released under the GNU/GPL License</copyright>
+	<license>http://www.gnu.org/licenseses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>sahu.vipin@gmail.com</authorEmail>
+	<authorUrl>http://www.webkul.com</authorUrl>
+	<version>2.5.0</version>
+	<description></description>
+	<files>
+		<filename module="mod_custom_youtubeplaylist">mod_custom_youtubeplaylist.php</filename>
+		<filename module="mod_custom_youtubeplaylist">index.html</filename>	
+		<filename module="mod_custom_youtubeplaylist">helper.php</filename>		
+		<folder>images</folder>
+		<folder>js</folder>	
+		<folder>css</folder>
+		<folder>tmpl</folder>	
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="moduleclass_sfx" type="text" default="" label="Module Class Suffix" description="A suffix to be applied to the css class of the module (table.moduletable), this allows individual module styling" />
+				
+				<field name="wkytstream" type="radio" label="Set YouTube User Stream" default="0" description="Do you want to set the YouTube user Stream then Yes and give the user id and No for fill the video links and titles">			<option value="1">yes</option>			<option value="0">NO</option>		</field>		
+				<field name="ytuserstream" type="text" default="tseries" label="Set YouTube ID" description="Set the YouTube ID of the user"/>
+				<field name="yt_numstream" type="text" default="10" label="Set Number of Stream" description="Set the Number of YouTube Stream of the user"/>
+				
+				<field name="videolinks" type="textarea" 
+				default="http://www.youtube.com/watch?v=UzOh8QwjjkU,http://www.youtube.com/watch?v=mylSUZZd65k,http://www.youtube.com/watch?v=zW7g_L9O344,http://www.youtube.com/watch?v=vRirqVffONo,http://www.youtube.com/watch?v=DGvD-ZWui54,http://www.youtube.com/watch?v=IjdiSxrApic" 
+		label="Video Links" description="Set here Youtube video links All video link should separated by ,(comma) " rows="15" cols="30"/>
+				<field name="videoTitle" type="textarea" default="Video1,Video2,Video3,Video4,Video5,Video6" label="Video Title" description="Set here Videos Titles Every Title should separated by , (comma) " rows="15" cols="30"/>
+				<field name="addThumbs" type="radio" label="Add Thumbs" default="1" description="Do you want to Display Thumbs of videos">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="autoPlay" type="radio" label="Auto Play" default="0" description="Do you want to use Auto Play">
+					<option value="1">yes</option>
+					<option value="0">NO</option>
+				</field>
+				<field name="relVedio" type="radio" label="Related Vedio" default="0" description="Do you want to Related Vedio">
+			<option value="1">yes</option>
+			<option value="0">NO</option>
+				</field>
+				<field name="allowFullScreen" type="radio" label="Allow FullScreen" default="0" description="Do you want to Allow FullScreen">
+					<option value="1">yes</option>
+					<option value="0">NO</option>
+				</field>
+				
+				<field name="width" type="text" default="250" label="width of module" description="Set width of module here"/>
+				<field name="height" type="text" default="300" label="height of module" description="Set height of module here"/>		
+			</fieldset>
+			<fieldset name="advanced">
+				<field name="cache" type="list" default="0" label="Caching" description="Select whether to cache the content of this module">
+					<option value="1">Use global</option>
+					<option value="0">No caching</option>
+				</field>
+				<field name="cache_time" type="text" default="900" label="Cache Time" description="The time before the module is recached" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>

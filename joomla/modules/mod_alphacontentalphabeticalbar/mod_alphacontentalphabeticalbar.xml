@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install type="module" version="1.5.0">
+	<name>Alphabetical bar for AlphaContent</name>
+	<author>Bernard Gilly</author>
+	<creationDate>2008 October 17</creationDate>
+	<copyright>Copyright (C) 2008. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>www.alphaplug.com</authorEmail>
+	<authorUrl>http://www.alphaplug.com</authorUrl>
+	<version>1.0.1</version>
+	<description>Alphabetical bar for AlphaContent component.</description>
+	<files>
+		<filename module="mod_alphacontentalphabeticalbar">mod_alphacontentalphabeticalbar.php</filename>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>
+		<filename>tmpl/index.html</filename>
+		<filename>tmpl/default.php</filename>
+	</files>
+	<params>
+		<param name="moduleclass_sfx" type="text" default="" label="Class Suffix" description="Module Class Suffix" />
+		<param name="itemidmenu" type="text" default="" label="Directory ID" description="Item ID of Directory (menu linked to AlphaContent)" />
+		<param name="useAC_CSS" type="list" default="1" label="Use AC CSS" description="Use CSS provide by AlphaContent component">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</param>
+	</params>
+</install>

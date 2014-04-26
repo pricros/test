@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install type="module" version="1.5.0" method="upgrade">
+	<name>Alpha Top Rated</name>
+	<author>Bernard Gilly</author>
+	<creationDate>2010 February 02</creationDate>
+	<copyright>Copyright (C) 2008-2010. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>www.alphaplug.com</authorEmail>
+	<authorUrl>http://www.alphaplug.com</authorUrl>
+	<version>1.0.2</version>
+	<description>Top rated with AlphaContent component.</description>
+	<languages>
+		<language tag="en-GB">en-GB.mod_alphatoprated.ini</language>
+		<language tag="fr-FR">fr-FR.mod_alphatoprated.ini</language>
+	</languages>
+	<files>
+		<filename module="mod_alphatoprated">mod_alphatoprated.php</filename>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>
+		<filename>tmpl/index.html</filename>
+		<filename>tmpl/default.php</filename>
+	</files>
+	<params>
+		<param name="moduleclass_sfx" type="text" default="" label="ATRCLASSSUFFIX" description="ATRCLASSSUFFIXDESC" />
+		<param name="@spacer" type="spacer" default="" label="" description="" />
+		<param name="itemidmenu" type="text" default="" label="ATRDIRECTORYID" description="ATRITEMIDMENUDESC" />
+		<param name="count" type="text" default="5" label="ATRCOUNT" description="ATRCOUNTDESC" />
+		<param name="componentused" type="list" default="com_content" label="ATRCONTENTUSED" description="ATRCONTENTUSEDDESC">
+			<option value="com_content">ATRCONTENT</option>
+			<option value="com_weblinks">ATRWEBLINKS</option>
+			<option value="com_contact">ATRCONTACTS</option>
+		</param>
+		<param name="secid" type="text" default="" label="ATRSECTIONID" description="ATRPARAMSECTIONID" />
+		<param name="catid" type="text" default="" label="ATRCATEGORYID" description="ATRPARAMCATEGORYID" />
+		<param name="@spacer" type="spacer" default="" label="" description="" />
+		<param name="showstars" type="radio" default="1" label="ATRSHOWSTARS" description="ATRSHOWSTARSDESC">
+			<option value="1">ATRSHOW</option>
+			<option value="0">ATRHIDE</option>
+		</param>
+		<param name="showvotecount" type="list" default="1" label="ATRDISPLAYVOTERS" description="ATRDISPLAYVOTERSDESC">
+			<option value="0">ATRNO</option> 
+			<option value="1">ATRYES</option> 
+		</param>
+		<param name="showvotevalue" type="list" default="1" label="ATRDISPLAYTOTALVALUE" description="ATRDISPLAYTOTALVALUEDESC">
+			<option value="0">ATRNO</option> 
+			<option value="1">ATRYES</option> 
+		</param>
+		<param name="limitcharstitle" type="text" default="" label="ATRMAXLIMITCHARS" description="ATRMAXLIMITCHARSDESC" />
+	</params>
+</install>

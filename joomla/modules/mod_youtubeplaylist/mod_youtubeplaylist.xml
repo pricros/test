@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension
+	type="module"
+	version="1.6"
+	client="site"
+	method="upgrade">
+	<!-- Revised on September 9th, 2011 -->
+	<name>Youtube playlist player</name>
+	<author>Viet NguyenHoang</author>
+	<creationDate>4th-July-2011</creationDate>
+	<copyright>Copyright (C) 20011 www.luyenkim.org. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>viet4777@yahoo.com</authorEmail>
+	<authorUrl>viet4777.luyenkim.org</authorUrl>
+	<version>4.1.8</version>
+	<description>MOD_YOUTUBEPLAYLIST_XML_DESCRIPTION</description>
+
+	<files>
+		<filename
+			module="mod_youtubeplaylist">mod_youtubeplaylist.php</filename>
+		<folder>tmpl</folder>
+		<folder>css</folder>
+		<folder>js</folder>
+		<folder>images</folder>
+		<folder>languages</folder>
+		<folder>player</folder>		
+		<folder>params</folder>				
+		<filename>helper.php</filename>
+		<filename>index.html</filename>
+		<filename>mod_youtubeplaylist.xml</filename>
+	</files>
+
+	<languages folder="languages">
+		<language tag="en-GB">en-GB.mod_youtubeplaylist.ini</language>
+		<language tag="en-GB">en-GB.mod_youtubeplaylist.sys.ini</language>
+	</languages>	
+
+	<config>
+		<fields name="params">
+			<fieldset
+				name="basic">
+			<field name="cached_time" type="list" default="-2" label="Cache parameters time" description="DESCRN_CACHE_TIME">
+				<option value="0">No (Clear cache - For testing Only)</option>
+				<option value="-2">Clear then Cache 4 ever</option>
+				<option value="300">5 minutes</option>
+				<option value="900">15 minutes</option>	  
+				<option value="1800">30 minutes</option>
+				<option value="3600">1 hours</option>
+				<option value="7200">2 hours</option>
+				<option value="28800">8 hours</option>
+				<option value="86400">24 hours</option>
+				<option value="172800">2 days</option>  
+				<option value="604800">1 week</option>
+				<option value="2419200">4 week</option>
+				<option value="31536000">365 days</option>
+				<option value="-1">Cache for ever</option>	
+			</field>	
+			 <field type="spacer" default=""  label="&lt;b&gt;JW palyer settings&lt;/b&gt;" description=""/>
+			<field name="width" type="text" default="425" size="5" label="Width" description="DESCRN_WIDTH"/>
+			<field name="height" type="text" default="355" size="5" label="Height" description="DESCRN_HEIGHT"/>	 
+			<field name="playerskin" type="list" default="0" label="Player skin" description="DESCRN_PLAYER_SKIN">
+				<option value="0">Default</option>
+				<option value="newtube.zip">newtube</option>
+				<option value="whotube.zip">Who tube</option>
+				<option value="glatt.zip">glatt</option>
+				<option value="graphite.zip">graphite</option>
+				<option value="mare.zip">mare</option>
+				<option value="metall.zip">metall</option>	
+				<option value="nemesis.zip">nemesis</option>
+				<option value="nikitaskin.zip">nikitaskin</option>	
+				<option value="sea.zip">sea</option>
+				<option value="skewd.zip">skewd</option>
+				<option value="solidgold.zip">solidgold</option>
+				<option value="tiby.zip">tiby</option>	
+				<option value="unlimblue.zip">unlimblue</option>					
+				<option value="facebook.zip">facebook</option>
+				<option value="nature01.zip">nature01</option>
+				<option value="grol.zip">grol</option>
+				<option value="carbon.zip">carbon</option>
+			</field>
+			<field name="playlist_position" type="list" default="bottom" label="Playlist box position" description="DESCRN_PLAYER_PLAYLIST_BOX">
+				<option value="none">None</option>
+				<option value="over">Over</option>
+				<option value="bottom">Bottom</option>		
+				<option value="right">Right</option>
+				<option value="top">Top</option>
+				<option value="left">Left</option>		
+			</field>
+			<field name="playlist_size" type="text" default="180" size="10" label="Playlist box size" description="DESCRN_PLAYER_PLAYLIST_BOX_SIZE"/>		
+			<field name="hd_jwplay_on" type="list" default="0" label="YouTube HD" description="DESCRN_YOUTUBE_HD">
+			  <option value="0">No</option>
+			  <option value="1">Yes</option>
+			</field>			
+			<field type="spacer" default=""  label="&lt;b&gt;Youtube Display settings&lt;/b&gt;" description=""/>
+			<field name="playlist_items" type="list" default="25" label="PLAYSITEMS" description="DESCRN_PLAYSITEMS">
+				<option value="5">5</option>
+				<option value="10">10</option>
+				<option value="15">15</option>
+				<option value="20">20</option>
+				<option value="25">25</option>
+				<option value="30">30</option>
+				<option value="40">40</option>
+				<option value="50">50</option>
+			</field>
+			<field name="user_playlist" type="radio" default="1" label="YOUTUBE_PLAYLIST_USER" description="DESCRN_YOUTUBE_PLAYLIST_USER">
+			  <option value="0">No</option>
+			  <option value="1">Yes</option>
+			</field>
+			<field name="playlist_np" type="list" default="1" label="YOUTUBE_PLAYLIST_NP" description="DESCRN_YOUTUBE_PLAYLIST_NP">
+			  <option value="0">No</option>
+			  <option value="1">Text button</option>
+			  <option value="2">Image button</option>
+			</field>
+			<field name="playlist_np_color" type="list" default="tan" label="YOUTUBE_PLAYLIST_NP_COLOR" description="DESCRN_YOUTUBE_PLAYLIST_NP_COLOR">
+				<option value="blue">blue</option> 
+				<option value="brown">brown</option>
+				<option value="cyan">cyan</option>
+				<option value="gray">gray</option>
+				<option value="green">green</option>
+				<option value="magenta">magenta</option>
+				<option value="orange">orange</option>
+				<option value="red">red</option>
+				<option value="tan">tan</option>
+				<option value="yellow">yellow</option>
+			</field>			
+			<field type="spacer" default=""  label="&lt;b&gt;Youtube Video settings&lt;/b&gt;" description=""/>
+			<field name="vid" type="textarea" default="" label="Video id list" rows="5" cols="30" description="DESCRN_VID"/>
+			<field name="vpid" type="textarea" default="" label="Video playlist id list" rows="5" cols="30" description="DESCRN_VPID"/>
+			<field name="vuid" type="textarea" default="" label="Video User id list" rows="5" cols="30" description="DESCRN_VUID"/>
+			<field name="ytid" type="textarea" default="" label="Youtube list" rows="5" cols="30" description="DESCRN_YTID"/>	
+			<field name="split_letter" type="text" default="|" size="1" label="Split letter" description="DESCRN_SPLIT"/>
+			<field name="playlist" type="list" default="0" label="Setting" description="DESCRN_PLAYTYPE">
+				<option value="0">S_VIDEO</option>
+				<option value="1">S_PLAYLIST</option>
+				<option value="2">S_USER</option>
+				<option value="3">S_YOUTUBE</option>
+			</field>		
+			<field name="style" type="list" default="0" label="PLAYSTYLE" description="DESCRN_PLAYSTYLE">
+			  <option value="number">Number list</option>
+			  <option value="drop">Droplist</option>
+			  <option value="image">Image list</option>
+			  <option value="slider">Image list slider</option>
+			</field>
+			<field name="position" type="list" default="1" label="Playlist position" description="DESCRN_VIDEOPOS">
+			  <option value="0">Above</option>
+			  <option value="1">Below</option>
+			  <option value="2">Customization</option>
+			</field>
+			<field type="spacer" default=""  label="&lt;b&gt;Image list settings&lt;/b&gt;" description=""/>	
+			<field name="imagewidth" type="text" default="50" size="5" label="Image width" description="DESCRN_IMAGEWITH"/>
+			<field name="numimage" type="text" default="4" size="5" label="Image per line" description="DESCRN_IMAGELINE"/>	
+			<field type="spacer" default=""  label="&lt;b&gt;Slide box settings&lt;/b&gt;" description=""/>
+			<field name="sl_imagewidth" type="text" default="50" size="5" label="Image width" description="DESCRN_SIMAGEWITH"/>
+			<field name="sl_numimage" type="text" default="4" size="5" label="Image per line" description="DESCRN_SIMAGELINE"/>
+			<field name="box_background" type="text" default="#EBE2E5" size="30" label="Box background" description="DESCRN_SBOXBCKGROUND"/>
+			<field type="spacer" default=""  label="&lt;b&gt;Other settings&lt;/b&gt;" description=""/>	
+		  <field name="related" type="list" default="1" label="Related videos" description="DESCRN_RELATED">
+			  <option value="0">No</option>
+			  <option value="1">Yes</option>
+			</field>
+			<field name="autoplay" type="list" default="0" label="Autoplay" description="DESCRN_AUTOPLAY">
+			  <option value="0">No</option>
+			  <option value="1">Yes</option>
+			</field>
+			<field name="allowfullscreen" type="list" default="1" label="Allow full screen" description="DESCRN_ALLOWFS">
+			  <option value="0">No</option>
+			  <option value="1">Yes</option>
+			</field>
+			<field name="randomplay" type="list" default="1" label="Random video" description="DESCRN_RANDOMPLAY">
+			  <option value="0">No</option>
+			  <option value="1">Yes</option>
+			</field>
+			<field name="randomlist" type="list" default="0" label="RANDOMPLAYLIST" description="DESCRN_RANDOMPLAYLIST">
+			  <option value="0">No</option>
+			  <option value="1">Yes</option>
+			</field>
+			<field name="randomitems" type="text" default="5" label="Random video list" description="DESCRN_RANDOMPLAYLIST_ITEMS" />
+
+			<field name="before_string" type="textarea" default="" label="Text before video" rows="5" cols="30" description="DESCRN_BEFORE_VIDEO"/>
+			<field name="after_string" type="textarea" default="" label="Text after video" rows="5" cols="30" description="DESCRN_AFTER_VIDEO"/>				
+			</fieldset>	
+			<fieldset
+				name="advanced">
+
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+
+				<field
+					name="moduleclass_sfx"
+					type="text"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+
+				<field
+					name="cache"
+					type="list"
+					default="1"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC">
+					<option
+						value="1">JGLOBAL_USE_GLOBAL</option>
+					<option
+						value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+
+				<field
+					name="cache_time"
+					type="text"
+					default="900"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+
+				<field
+					name="cachemode"
+					type="hidden"
+					default="itemid">
+					<option
+						value="itemid"></option>
+				</field>
+
+			</fieldset>			
+			
+		</fields>	
+	</config>
+</extension>
